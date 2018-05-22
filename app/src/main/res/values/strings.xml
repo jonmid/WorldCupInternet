@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Copa Mundo</string>
+    <string name="str_toolbar_account">Crear cuenta</string>
+
+    <string name="str_menubn_results">Partidos</string>
+    <string name="str_menubn_groups">Grupos</string>
+    <string name="str_menubn_news">Noticias</string>
+    <string name="str_menubn_stadium">Estadios</string>
+    <string name="str_menubn_profile">Perfil</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WorldCup</string>
+    <string name="str_toolbar_account">Create Account</string>
+
+    <string name="str_menubn_results">Match</string>
+    <string name="str_menubn_groups">Group</string>
+    <string name="str_menubn_news">News</string>
+    <string name="str_menubn_stadium">Stadium</string>
+    <string name="str_menubn_profile">Profile</string>
+</resources>
