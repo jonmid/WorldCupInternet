@@ -10,10 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.jonmid.worldcupinternet.Calendar.adapter.CalendarAdapter;
-import com.example.jonmid.worldcupinternet.Calendar.adapter.PostAdapter;
 import com.example.jonmid.worldcupinternet.Calendar.model.Calendar;
-import com.example.jonmid.worldcupinternet.Calendar.model.Post;
-import com.example.jonmid.worldcupinternet.Calendar.model.RecyclerViewItem;
 import com.example.jonmid.worldcupinternet.Calendar.presenter.CalendarFragmentPresenter;
 import com.example.jonmid.worldcupinternet.Calendar.presenter.CalendarFragmentPresenterImpl;
 import com.example.jonmid.worldcupinternet.R;
@@ -26,36 +23,27 @@ import java.util.List;
 public class CalendarFragment extends Fragment implements CalendarFragmentView {
 
     private CalendarFragmentPresenter calendarFragmentPresenter;
-
     RecyclerView recyclerViewCalendar;
-
 
     public CalendarFragment() {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_calendar, container, false);
 
         recyclerViewCalendar = (RecyclerView) view.findViewById(R.id.id_rcv_calendar);
         recyclerViewCalendar.setLayoutManager(new LinearLayoutManager(getContext()));
 
         calendarFragmentPresenter = new CalendarFragmentPresenterImpl(this);
-        calendarFragmentPresenter.getListDataCalendar();
+        calendarFragmentPresenter.getDataCalendar();
 
         return view;
     }
 
     @Override
-    public void showResult(List<RecyclerViewItem> recyclerViewItemList) {
-        recyclerViewCalendar.setAdapter(new CalendarAdapter(recyclerViewItemList, getContext()));
-    }
-
-    @Override
-    public void showResultPost(List<Post> postList) {
-        recyclerViewCalendar.setAdapter(new PostAdapter(postList, getContext()));
+    public void showResultCelendar(List<Calendar> calendarList) {
+        recyclerViewCalendar.setAdapter(new CalendarAdapter(calendarList, getContext()));
     }
 }

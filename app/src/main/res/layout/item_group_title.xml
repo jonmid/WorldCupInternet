@@ -4,18 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_margin="8dp">
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp">
 
     <TextView
-        android:id="@+id/id_txv_head_calendar"
+        android:id="@+id/id_txv_group_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Jueves 14 junio"
+        android:text="Grupo A"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:textColor="@color/colorPrimary"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
         android:background="#33BDBDBD"
-        android:padding="8dp"/>
+        android:padding="8dp" />
 
 </LinearLayout>

@@ -13,12 +13,4 @@ public class RestApiAdapter {
         return retrofit.create(Service.class);
     }
 
-    public Service getPostService(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        return retrofit.create(Service.class);
-    }
-
 }

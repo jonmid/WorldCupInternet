@@ -3,8 +3,6 @@ package com.example.jonmid.worldcupinternet.Calendar.presenter;
 import com.example.jonmid.worldcupinternet.Calendar.interactor.CalendarFragmentInteractor;
 import com.example.jonmid.worldcupinternet.Calendar.interactor.CalendarFragmentInteractorImpl;
 import com.example.jonmid.worldcupinternet.Calendar.model.Calendar;
-import com.example.jonmid.worldcupinternet.Calendar.model.Post;
-import com.example.jonmid.worldcupinternet.Calendar.model.RecyclerViewItem;
 import com.example.jonmid.worldcupinternet.Calendar.view.CalendarFragmentView;
 
 import java.util.List;
@@ -20,22 +18,12 @@ public class CalendarFragmentPresenterImpl implements CalendarFragmentPresenter 
     }
 
     @Override
-    public void showResult(List<RecyclerViewItem> recyclerViewItemList) {
-        //
+    public void showResultCelendar(List<Calendar> calendarList) {
+        calendarFragmentView.showResultCelendar(calendarList);
     }
 
     @Override
-    public void getListDataCalendar() {
-        calendarFragmentInteractor.getListDataCalendar();
-    }
-
-    @Override
-    public void showData(List<RecyclerViewItem> recyclerViewItemList) {
-        calendarFragmentView.showResult(recyclerViewItemList);
-    }
-
-    @Override
-    public void showResultPost(List<Post> postList) {
-        calendarFragmentView.showResultPost(postList);
+    public void getDataCalendar() {
+        calendarFragmentInteractor.getDataCalendar();
     }
 }

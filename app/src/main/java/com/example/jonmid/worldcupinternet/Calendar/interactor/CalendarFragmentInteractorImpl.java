@@ -1,10 +1,6 @@
 package com.example.jonmid.worldcupinternet.Calendar.interactor;
 
-import android.support.v7.widget.RecyclerView;
-
 import com.example.jonmid.worldcupinternet.Calendar.model.Calendar;
-import com.example.jonmid.worldcupinternet.Calendar.model.Post;
-import com.example.jonmid.worldcupinternet.Calendar.model.RecyclerViewItem;
 import com.example.jonmid.worldcupinternet.Calendar.presenter.CalendarFragmentPresenter;
 import com.example.jonmid.worldcupinternet.Calendar.repository.CalendarFragmentRepository;
 import com.example.jonmid.worldcupinternet.Calendar.repository.CalendarFragmentRepositoryImpl;
@@ -22,17 +18,12 @@ public class CalendarFragmentInteractorImpl implements CalendarFragmentInteracto
     }
 
     @Override
-    public void getListDataCalendar() {
-        calendarFragmentRepository.getListDataCalendar();
+    public void getDataCalendar() {
+        calendarFragmentRepository.getDataCalendar();
     }
 
     @Override
-    public void showData(List<RecyclerViewItem> recyclerViewItemList) {
-        calendarFragmentPresenter.showData(recyclerViewItemList);
-    }
-
-    @Override
-    public void showResultPost(List<Post> postList) {
-        calendarFragmentPresenter.showResultPost(postList);
+    public void showResultCelendar(List<Calendar> calendarList) {
+        calendarFragmentPresenter.showResultCelendar(calendarList);
     }
 }

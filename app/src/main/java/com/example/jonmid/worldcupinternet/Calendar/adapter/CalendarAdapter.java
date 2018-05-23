@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.jonmid.worldcupinternet.Calendar.model.Calendar;
-import com.example.jonmid.worldcupinternet.Calendar.model.Match;
-import com.example.jonmid.worldcupinternet.Calendar.model.RecyclerViewItem;
 import com.example.jonmid.worldcupinternet.R;
 
 import java.util.List;
@@ -18,98 +16,89 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CalendarAdapter extends RecyclerView.Adapter {
-
-    List<RecyclerViewItem> recyclerViewItemList;
+    List<Calendar> calendarList;
     Context context;
 
-    private static final int HEADER_ITEM = 0;
-    private static final int FOOTER_ITEM = 1;
-    private static final int FOOD_ITEM = 2;
-
-    public CalendarAdapter(List<RecyclerViewItem> recyclerViewItemList, Context context) {
-        this.recyclerViewItemList = recyclerViewItemList;
+    public CalendarAdapter(List<Calendar> calendarList, Context context) {
+        this.calendarList = calendarList;
         this.context = context;
     }
 
-    // *******************************************************************************************
+    // ********************************************************************************************
+
+    @Override
+    public int getItemViewType(int position) {
+        switch (calendarList.get(position).getwType()) {
+            case 0:
+                return Calendar.MATCH_TYPE;
+            case 1:
+                return Calendar.TITLE_TYPE;
+            default:
+                return -1;
+        }
+    }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View row;
-
-        if (viewType == HEADER_ITEM) {
-            row = inflater.inflate(R.layout.item_head_calendar, parent, false);
-            return new HeaderHolder(row);
-        } else if (viewType == FOOD_ITEM) {
-            row = inflater.inflate(R.layout.item_calendar, parent, false);
-            return new FoodItemHolder(row);
-
+        View item;
+        switch (viewType) {
+            case Calendar.MATCH_TYPE:
+                item = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_calendar_match, parent, false);
+                return new ViewHolderMatch(item);
+            case Calendar.TITLE_TYPE:
+                item = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_calendar_title, parent, false);
+                return new ViewHolderTitle(item);
         }
         return null;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        RecyclerViewItem recyclerViewItem = recyclerViewItemList.get(position);
-
-        if (holder instanceof HeaderHolder) {
-            HeaderHolder headerHolder = (HeaderHolder) holder;
-            //Calendar header = (Calendar) recyclerViewItem;
-
-            headerHolder.textViewHeadCalendar.setText("hfdbgj");
-        } else if (holder instanceof FoodItemHolder) {
-            FoodItemHolder foodItemHolder = (FoodItemHolder) holder;
-            //Match foodItem = (Match) recyclerViewItem;
-
-            //foodItemHolder.textViewTeamLocal.setText(foodItem.getLocal());
-            //foodItemHolder.textViewTeamHourMatch.setText(foodItem.getHour());
-            //foodItemHolder.textViewTeamVisitor.setText(foodItem.getVisitor());
+        Calendar object = calendarList.get(position);
+        if (object != null) {
+            switch (object.getwType()) {
+                case Calendar.MATCH_TYPE:
+                    ViewHolderMatch viewHolderMatch = (ViewHolderMatch) holder;
+                    viewHolderMatch.textViewTeamLocal.setText(object.getLocal());
+                    viewHolderMatch.textViewTeamHourMatch.setText(object.getHour());
+                    viewHolderMatch.textViewTeamVisitor.setText(object.getVisitor());
+                    break;
+                case Calendar.TITLE_TYPE:
+                    ViewHolderTitle viewHolderTitle = (ViewHolderTitle) holder;
+                    viewHolderTitle.textViewCalendarTitle.setText(object.getDay());
+                    break;
+            }
         }
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        RecyclerViewItem recyclerViewItem = recyclerViewItemList.get(position);
-
-        if (recyclerViewItem instanceof Calendar)
-            return HEADER_ITEM;
-        else if (recyclerViewItem instanceof Match)
-            return FOOD_ITEM;
-        else
-            return super.getItemViewType(position);
     }
 
     @Override
     public int getItemCount() {
-        return recyclerViewItemList.size();
+        return calendarList.size();
     }
 
-    // *******************************************************************************************
+    // ********************************************************************************************
 
-    //Food item holder
-    private class FoodItemHolder extends RecyclerView.ViewHolder {
-        TextView textViewTeamLocal, textViewTeamHourMatch, textViewTeamVisitor;
-        CircleImageView circleImageViewLocal, circleImageViewVisitor;
+    public class ViewHolderTitle extends RecyclerView.ViewHolder{
+        TextView textViewCalendarTitle;
 
-        FoodItemHolder(View itemView) {
-            super(itemView);
-            textViewTeamLocal = itemView.findViewById(R.id.id_txv_team_local);
-            textViewTeamHourMatch = itemView.findViewById(R.id.id_txv_team_hourmatch);
-            textViewTeamVisitor = itemView.findViewById(R.id.id_txv_team_visitor);
-            circleImageViewLocal = itemView.findViewById(R.id.id_img_team_local);
-            circleImageViewVisitor = itemView.findViewById(R.id.id_img_team_visitor);
+        public ViewHolderTitle(View item) {
+            super(item);
+            textViewCalendarTitle = item.findViewById(R.id.id_txv_calendar_title);
         }
     }
 
-    //header holder
-    private class HeaderHolder extends RecyclerView.ViewHolder {
-        TextView textViewHeadCalendar;
+    public class ViewHolderMatch extends RecyclerView.ViewHolder{
+        TextView textViewTeamLocal, textViewTeamHourMatch, textViewTeamVisitor;
+        CircleImageView circleImageViewLocal, circleImageViewVisitor;
 
-        HeaderHolder(View itemView) {
-            super(itemView);
-            textViewHeadCalendar = itemView.findViewById(R.id.id_txv_head_calendar);
+        public ViewHolderMatch(View item) {
+            super(item);
+            textViewTeamLocal = item.findViewById(R.id.id_txv_team_local);
+            textViewTeamHourMatch = item.findViewById(R.id.id_txv_team_hourmatch);
+            textViewTeamVisitor = item.findViewById(R.id.id_txv_team_visitor);
+            circleImageViewLocal = item.findViewById(R.id.id_img_team_local);
+            circleImageViewVisitor = item.findViewById(R.id.id_img_team_visitor);
         }
     }
 }
