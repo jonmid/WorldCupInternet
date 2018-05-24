@@ -8,4 +8,18 @@
     <string name="str_menubn_news">News</string>
     <string name="str_menubn_stadium">Stadium</string>
     <string name="str_menubn_profile">Profile</string>
+
+    <string name="str_login_name">Username</string>
+    <string name="str_login_password">Password</string>
+    <string name="str_btn_login">Enter</string>
+
+    <string name="str_account_email">Email</string>
+    <string name="str_account_name">First name</string>
+    <string name="str_account_user">User</string>
+    <string name="str_account_password">Password</string>
+    <string name="str_account_repassword">Confirm Password</string>
+    <string name="str_btn_account">Create Accoun</string>
+
+    <string name="str_stadium_history">History</string>
+    <string name="str_stadium_desing">Design</string>
 </resources>

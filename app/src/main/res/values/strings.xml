@@ -9,6 +9,17 @@
     <string name="str_menubn_stadium">Estadios</string>
     <string name="str_menubn_profile">Perfil</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_login_name">Nombre de usuario</string>
+    <string name="str_login_password">Contraseña</string>
+    <string name="str_btn_login">Ingresar</string>
+
+    <string name="str_account_email">Correo electronico</string>
+    <string name="str_account_name">Nombre</string>
+    <string name="str_account_user">Usuario</string>
+    <string name="str_account_password">Contraseña</string>
+    <string name="str_account_repassword">Confirmar contraseña</string>
+    <string name="str_btn_account">Crear cuenta</string>
+
+    <string name="str_stadium_history">Historia</string>
+    <string name="str_stadium_desing">Diseño</string>
 </resources>

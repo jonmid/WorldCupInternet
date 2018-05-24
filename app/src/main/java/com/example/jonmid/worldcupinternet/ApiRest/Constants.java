@@ -4,4 +4,5 @@ public class Constants {
     public static final String ROOT_URL = "https://jmapiworldcup.herokuapp.com/";
     public static final String URL_GET_CALENDAR = "calendar";
     public static final String URL_GET_GROUP = "group";
+    public static final String URL_GET_STADIUM = "stadium";
 }
