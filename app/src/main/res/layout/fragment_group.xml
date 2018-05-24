@@ -7,6 +7,13 @@
     android:background="@android:color/white"
     tools:context=".Groups.view.GroupFragment">
 
+    <ProgressBar
+        android:id="@+id/id_pgb_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/id_rcv_group"
         android:layout_width="match_parent"
