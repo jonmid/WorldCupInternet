@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.jonmid.worldcupinternet.Calendar.model.Calendar;
 import com.example.jonmid.worldcupinternet.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -63,6 +64,8 @@ public class CalendarAdapter extends RecyclerView.Adapter {
                     viewHolderMatch.textViewTeamLocal.setText(object.getLocal());
                     viewHolderMatch.textViewTeamHourMatch.setText(object.getHour());
                     viewHolderMatch.textViewTeamVisitor.setText(object.getVisitor());
+                    Picasso.get().load(object.getImg_local()).into(viewHolderMatch.circleImageViewLocal);
+                    Picasso.get().load(object.getImg_visitor()).into(viewHolderMatch.circleImageViewVisitor);
                     break;
                 case Calendar.TITLE_TYPE:
                     ViewHolderTitle viewHolderTitle = (ViewHolderTitle) holder;

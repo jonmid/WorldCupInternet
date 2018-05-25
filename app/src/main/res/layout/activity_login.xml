@@ -43,7 +43,7 @@
                     app:counterEnabled="true"
                     app:counterMaxLength="30">
                     <android.support.design.widget.TextInputEditText
-                        android:id="@+id/id_tie_login_name"
+                        android:id="@+id/id_txv_login_username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/str_login_name"/>
@@ -53,20 +53,19 @@
                     android:layout_height="wrap_content"
                     android:theme="@style/EditTextWhite">
                     <android.support.design.widget.TextInputEditText
-                        android:id="@+id/id_tie_login_password"
+                        android:id="@+id/id_txv_login_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/str_login_password"
                         android:inputType="textPassword" />
                 </android.support.design.widget.TextInputLayout>
                 <Button
-                    android:id="@+id/id_btn_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="@string/str_btn_login"
                     android:theme="@style/RaisedButtonDark"
-                    android:onClick="showHome"/>
+                    android:onClick="onClickButton"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -74,8 +73,7 @@
                     android:textColor="@android:color/white"
                     android:textStyle="bold"
                     android:layout_marginTop="16dp"
-                    android:layout_gravity="center_horizontal"
-                    />
+                    android:layout_gravity="center_horizontal" />
             </LinearLayout>
         </ScrollView>
 

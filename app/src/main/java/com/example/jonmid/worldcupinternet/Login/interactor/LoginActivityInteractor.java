@@ -1,5 +1,5 @@
 package com.example.jonmid.worldcupinternet.Login.interactor;
 
 public interface LoginActivityInteractor {
-    void signIn();
+    void signIn(String user, String pass);
 }
