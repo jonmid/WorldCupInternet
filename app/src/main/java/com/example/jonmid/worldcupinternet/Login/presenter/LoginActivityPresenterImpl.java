@@ -4,7 +4,10 @@ import android.support.design.widget.TextInputEditText;
 
 import com.example.jonmid.worldcupinternet.Login.interactor.LoginActivityInteractor;
 import com.example.jonmid.worldcupinternet.Login.interactor.LoginActivityInteractorImpl;
+import com.example.jonmid.worldcupinternet.Login.model.Login;
 import com.example.jonmid.worldcupinternet.Login.view.LoginActivityView;
+
+import java.util.List;
 
 public class LoginActivityPresenterImpl implements LoginActivityPresenter {
 
@@ -22,8 +25,8 @@ public class LoginActivityPresenterImpl implements LoginActivityPresenter {
     }
 
     @Override
-    public void showResult() {
-
+    public void showResult(List<Login> loginList) {
+        loginActivityView.showResult(loginList);
     }
 
     @Override

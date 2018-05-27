@@ -22,4 +22,10 @@
 
     <string name="str_stadium_history">History</string>
     <string name="str_stadium_desing">Design</string>
+
+    <string name="str_profile_option_uno">Notifications</string>
+    <string name="str_profile_option_dos">Send email</string>
+    <string name="str_profile_option_tres">Sign off</string>
+
+    <string name="str_title_video">Remember the best goals of the world</string>
 </resources>

@@ -3,7 +3,7 @@ package com.example.jonmid.worldcupinternet.ApiRest;
 import com.example.jonmid.worldcupinternet.Calendar.model.Calendar;
 import com.example.jonmid.worldcupinternet.Groups.model.Group;
 import com.example.jonmid.worldcupinternet.Login.model.Login;
-import com.example.jonmid.worldcupinternet.Login.model.User;
+import com.example.jonmid.worldcupinternet.News.model.News;
 import com.example.jonmid.worldcupinternet.Stadiums.model.Stadium;
 
 import java.util.List;
@@ -24,6 +24,9 @@ public interface Service {
 
     @GET(Constants.URL_GET_GROUP)
     Call<List<Group>> getDataGroup();
+
+    @GET(Constants.URL_GET_NEWS)
+    Call<List<News>> getDataNews();
 
     @GET(Constants.URL_GET_STADIUM)
     Call<List<Stadium>> getDataStadium();

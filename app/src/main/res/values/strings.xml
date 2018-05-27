@@ -22,4 +22,10 @@
 
     <string name="str_stadium_history">Historia</string>
     <string name="str_stadium_desing">Diseño</string>
+
+    <string name="str_profile_option_uno">Notificaciones</string>
+    <string name="str_profile_option_dos">Enviar email</string>
+    <string name="str_profile_option_tres">Cerrar sesión</string>
+
+    <string name="str_title_video">Recuerde los mejores goles del mundial</string>
 </resources>

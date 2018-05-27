@@ -5,5 +5,6 @@ public class Constants {
     public static final String URL_POST_LOGIN = "login";
     public static final String URL_GET_CALENDAR = "calendar";
     public static final String URL_GET_GROUP = "group";
+    public static final String URL_GET_NEWS = "news";
     public static final String URL_GET_STADIUM = "stadium";
 }

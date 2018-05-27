@@ -10,9 +10,12 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.jonmid.worldcupinternet.Home.view.HomeActivity;
+import com.example.jonmid.worldcupinternet.Login.model.Login;
 import com.example.jonmid.worldcupinternet.Login.presenter.LoginActivityPresenter;
 import com.example.jonmid.worldcupinternet.Login.presenter.LoginActivityPresenterImpl;
 import com.example.jonmid.worldcupinternet.R;
+
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity implements LoginActivityView {
 
@@ -36,18 +39,20 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityVie
     }
 
     @Override
-    public void showResult() {
+    public void showResult(List<Login> loginList) {
         // Inicializar coleccion de preferencias llamada mis "PreferencesWorldCup"
         sharedPreferences = getSharedPreferences("PreferencesWorldCup", Context.MODE_PRIVATE);
 
         // Crear preferencias Clave - Valor
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("email", "jamideros@hotmail.com");
-        editor.putString("name", "Jonathan Mideros");
-        editor.putString("user", "jonmid");
+        editor.putString("email", loginList.get(0).getEmail());
+        editor.putString("name", loginList.get(0).getName());
+        editor.putString("user", loginList.get(0).getUser());
+        editor.putString("img", loginList.get(0).getImg_user());
         editor.commit();
 
         Intent intent = new Intent(this, HomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 

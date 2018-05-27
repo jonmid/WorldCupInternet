@@ -7,14 +7,16 @@ public class Login {
     private String password;
     private String name;
     private String email;
+    private String img_user;
 
-    public Login(boolean searchUser, Integer id, String user, String password, String name, String email) {
+    public Login(boolean searchUser, Integer id, String user, String password, String name, String email, String img_user) {
         this.searchUser = searchUser;
         this.id = id;
         this.user = user;
         this.password = password;
         this.name = name;
         this.email = email;
+        this.img_user = img_user;
     }
 
     public boolean isSearchUser() {
@@ -63,5 +65,13 @@ public class Login {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getImg_user() {
+        return img_user;
+    }
+
+    public void setImg_user(String img_user) {
+        this.img_user = img_user;
     }
 }
