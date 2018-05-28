@@ -1,6 +1,7 @@
 package com.example.jonmid.worldcupinternet.ApiRest;
 
 import com.example.jonmid.worldcupinternet.Calendar.model.Calendar;
+import com.example.jonmid.worldcupinternet.CreateAccount.Model.Account;
 import com.example.jonmid.worldcupinternet.Groups.model.Group;
 import com.example.jonmid.worldcupinternet.Login.model.Login;
 import com.example.jonmid.worldcupinternet.News.model.News;
@@ -18,6 +19,15 @@ public interface Service {
     @POST(Constants.URL_POST_LOGIN)
     @FormUrlEncoded
     Call<List<Login>> onSignIn(@Field("user") String user, @Field("pass") String pass);
+
+    @POST(Constants.URL_POST_SIGNUP)
+    @FormUrlEncoded
+    Call<List<Account>> onSignUp(
+            @Field("user") String user,
+            @Field("pass") String pass,
+            @Field("name") String name,
+            @Field("email") String email
+    );
 
     @GET(Constants.URL_GET_CALENDAR)
     Call<List<Calendar>> getDataCalendar();

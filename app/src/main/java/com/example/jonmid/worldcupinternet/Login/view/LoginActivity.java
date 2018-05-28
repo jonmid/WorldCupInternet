@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.jonmid.worldcupinternet.CreateAccount.view.CreateAccountActivity;
 import com.example.jonmid.worldcupinternet.Home.view.HomeActivity;
 import com.example.jonmid.worldcupinternet.Login.model.Login;
 import com.example.jonmid.worldcupinternet.Login.presenter.LoginActivityPresenter;
@@ -61,8 +62,8 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityVie
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
     }
 
-    /*public void showRegister(View view){
+    public void onClickButtonCreateAccount(View view){
         Intent intent = new Intent(this, CreateAccountActivity.class);
         startActivity(intent);
-    }*/
+    }
 }

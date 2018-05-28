@@ -19,9 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login.view.LoginActivity"
+        <activity
+            android:name=".Login.view.LoginActivity"
             android:configChanges="screenSize|orientation"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".CreateAccount.view.CreateAccountActivity"></activity>
     </application>
 
 </manifest>
